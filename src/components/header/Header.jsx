@@ -1,7 +1,7 @@
 import React from 'react'
 import styles  from './Header.module.css'
 import { Link } from 'react-router-dom';
-import { Path } from '../../utils/path';
+import  Path  from '../../utils/path';
 //icons
 import { FiHeart } from "react-icons/fi";
 import { BsCart3 } from "react-icons/bs";

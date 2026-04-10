@@ -8,5 +8,5 @@ const api =axios.create({
     'Content-Type':"application/json",
    }
 })
-console.log(api)
+
 export default api;

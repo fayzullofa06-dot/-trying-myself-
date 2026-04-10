@@ -32,7 +32,6 @@ font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   
-  /* The "Shiny" setup */
   background: linear-gradient(
     to right, 
     var(--cyan) 20%, 

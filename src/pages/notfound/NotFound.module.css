@@ -1,0 +1,37 @@
+.Notcontainer{
+  width: 100%;
+ max-width: 500px;
+height: 600px;
+border: 2px solid #00f2ff;
+padding: 10px 20px;
+margin: 0 auto;
+margin-top: 40px;
+background-color: white;
+box-shadow: 2px 10px 30px red;
+transform: 0.3s ease;
+backdrop-filter: blur(30px);
+}
+.insideC{
+    padding: 20px;
+    margin-top: 90px;
+    margin-left: 60px;
+  border: 3px solid red;
+   width: 100%;
+   max-width: 300px;
+   height: 200px;
+
+}
+.Link{
+    list-style: none;
+    text-decoration: none;
+    color: var(--bg);
+}
+.Link:hover{
+    color: red;
+}
+.Link:active{
+   color: var(--bg);
+}
+
+
+

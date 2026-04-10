@@ -1,0 +1,161 @@
+/* --- Global Container --- */
+.container {
+  display: grid;
+  /* Automatically fits as many cards as possible, min 280px each */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Product Card --- */
+.products {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures all cards in a row match height */
+}
+
+.products:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Image Section --- */
+.img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Makes the image area a perfect square */
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Prevents stretching; use 'cover' if you want no white space */
+  padding: 15px;
+  transition: transform 0.5s ease;
+}
+
+.products:hover .img img {
+  transform: scale(1.05);
+}
+
+.likebtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ff4757;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Info Section --- */
+.info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes the buttons to the bottom */
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0 0 8px 0;
+  /* Limits title to 1 line to keep cards aligned */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #27ae60;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.oldprice {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  color: #b2bec3;
+  font-weight: 400;
+}
+
+/* --- Buttons Group --- */
+.btns {
+  margin-top: auto; /* Always sticks to the bottom of the card */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.counterGroup {
+  display: flex;
+  align-items: center;
+  background: #f1f2f6;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.countBtn {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #2d3436;
+}
+
+.countNumber {
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+}
+
+.addBtn {
+  background: #2d3436;
+  color: white;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.addBtn:hover {
+  background: #000;
+}
+
+/* Responsive Tweak for mobile */
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}

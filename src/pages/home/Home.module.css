@@ -1,15 +1,15 @@
 /* --- Global Container --- */
 .container {
   display: grid;
-  /* Automatically fits as many cards as possible, min 280px each */
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  
+grid-template-columns: repeat(auto-fit,minmax(min(300px,100%),1fr));
   gap: 25px;
   padding: 20px;
   max-width: 1400px;
-  margin: 0 auto;
+ 
 }
 
-/* --- Product Card --- */
+
 .products {
   background: #ffffff;
   border-radius: 12px;
@@ -152,10 +152,33 @@
   background: #000;
 }
 
-/* Responsive Tweak for mobile */
+
 @media (max-width: 480px) {
   .container {
     grid-template-columns: 1fr;
     padding: 10px;
   }
+}
+.Categories{
+display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  max-width: 1200px;
+}
+.catBtns{
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-height: 20px;
+  background-color: #292648;
+  color: #dddbff;
+}
+.catBtns:hover{
+  background-color: #6a6897;
+}
+
+
+
+.catBtns.active{
+background-color: #292649;
 }

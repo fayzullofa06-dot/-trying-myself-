@@ -5,10 +5,12 @@ import { useState } from 'react'
 
 import { BsCart3 } from "react-icons/bs";
 
-function Products({item}) {
-    const {id,title,category,price,images}=item;
+function Products({item,addToCart}) {
+    const{id,title,images,price}=item;
+    
+  const ImgSrc=images && images.length > 0 ? images[0] : '';
+
 const [count, setcount] = useState(1)
- const imgSrc = images && images.length > 0 ? images[0] : '';
     const inc=()=>{
         setcount((prev)=>prev+1)
 
@@ -18,10 +20,15 @@ const [count, setcount] = useState(1)
         setcount(prev=>prev >1 ? prev-1:1)
 
     }
+    const handlecartdata=()=>{
+        addToCart({id, title, price, images, count})
+        setcount(1)
+    }
   return (
     <div className={styles.products}>
     <div className={styles.img}>
-        <img src={imgSrc} alt={title} />
+        <img src={ImgSrc} alt={title} />: 
+       
   
     <button className={styles.likebtn}><FaHeart/></button>
         </div>
@@ -35,7 +42,8 @@ const [count, setcount] = useState(1)
                         <span className={styles.countNumber}>{count}</span>
                         <button onClick={inc} className={styles.countBtn}>+</button>
                     </div>
-                      <button className={styles.addBtn}>
+                      <button onClick={handlecartdata} className={styles.addBtn}>
+                        
                         <BsCart3 />
                     </button>
             </div>
